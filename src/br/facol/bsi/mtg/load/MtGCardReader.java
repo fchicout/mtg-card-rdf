@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.facol.bsi.mtg.load.pojos.MtGSet;
+import br.facol.bsi.mtg.load.pojos.MtGSet.Border;
 
 public class MtGCardReader {
 	private String jsonBruteFile = "/home/fchicout/Documents/nt_AllSets-x-unix.json";
@@ -31,8 +32,8 @@ public class MtGCardReader {
 				mtgSet.setReleaseDate(verifyDateProperty("releaseDate", setOnJson));
 				mtgSet.setCode(setOnJson.get("code").asText());
 				mtgSet.setMkm_name(verifyStringProperty("mkm_name", setOnJson));
-				System.out.println(mtgSet.getCode() + " - " + mtgSet.getBlock());
 				mtgSet.setBlock(verifyStringProperty("block", setOnJson));
+				mtgSet.setBorder(Border.valueOf(setOnJson.get("border").asText()));
 				result.add(mtgSet);
 			}
 		} catch (IOException e) {

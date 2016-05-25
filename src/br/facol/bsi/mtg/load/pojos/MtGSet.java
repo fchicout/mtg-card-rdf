@@ -3,6 +3,7 @@ package br.facol.bsi.mtg.load.pojos;
 import java.util.Date;
 
 public class MtGSet {
+	public enum Border {black, white, silver}; // ['black', 'white', 'silver' ]
 	// Already marshalled attributes
 	private String name;
 	private String code;
@@ -25,7 +26,16 @@ public class MtGSet {
 							// deck', 'archenemy', 'commander', 'conspiracy',
 							// undefined ]
 
-	private String border; // ['black', 'white', 'silver' ]
+	private Border border;
+	
+	
+	public Border getBorder() {
+		return border;
+	}
+
+	public void setBorder(Border border) {
+		this.border = border;
+	}
 
 	public String getName() {
 		return name;
