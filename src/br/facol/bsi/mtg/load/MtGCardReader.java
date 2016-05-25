@@ -32,7 +32,7 @@ public class MtGCardReader {
 				mtgSet.setCode(setOnJson.get("code").asText());
 				mtgSet.setMkm_name(verifyStringProperty("mkm_name", setOnJson));
 				System.out.println(mtgSet.getCode() + " - " + mtgSet.getBlock());
-				mtgSet.setBlock(setOnJson.get("block").asText());
+				mtgSet.setBlock(verifyStringProperty("block", setOnJson));
 				result.add(mtgSet);
 			}
 		} catch (IOException e) {

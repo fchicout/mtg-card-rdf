@@ -1,6 +1,6 @@
 package br.facol.bsi.mtg.semdata;
 
-public class MTGRDFWriter {
+public class MtGRDFWriter {
 	
 
 }
